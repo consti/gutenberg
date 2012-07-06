@@ -16,9 +16,10 @@ Gem::Specification.new do |gem|
   gem.version       = Gutenberg::VERSION
 
     # specify any dependencies here; for example:
-  gem.add_development_dependency "rdf"
-  gem.add_development_dependency "rdf-rdfxml"
+  # gem.add_development_dependency "rdf"
+  # gem.add_development_dependency "rdf-rdfxml"
 
   gem.add_runtime_dependency "rdf"
   gem.add_runtime_dependency "rdf-rdfxml"
+  gem.add_runtime_dependency "equivalent-xml" #removes annoying warning
 end
