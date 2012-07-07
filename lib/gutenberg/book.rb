@@ -1,3 +1,4 @@
+class EmptyRdfError < StandardError; end;
 module Gutenberg
   class Book
     attr_accessor :book_id, :creator, :title, :friendlytitle, :publisher, :rights, :license, :issued, :language
@@ -52,6 +53,8 @@ module Gutenberg
 
     def rdf_reader
       @rdf_reader ||= RDF::RDFXML::Reader.open(rdf_url)
+      raise EmptyRdfError if @rdf_reader.root.nil?
+      @rdf_reader
     end
 
     def rdf_url
