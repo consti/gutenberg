@@ -6,7 +6,7 @@ TODO: Write a gem description
 
 Add this line to your application's Gemfile:
 
-    gem 'gutenberg'
+    gem 'gutenberg', :git => 'git://github.com/consti/gutenberg.git'
 
 And then execute:
 
@@ -18,7 +18,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Something like:
+
+```ruby
+catalog = Gutenberg::Catalog::Parser.new('catalog.rdf')
+puts catalog.books.first.name
+catalog.books.first.get_data.author.birthdate
+catalog.books.first.get_data.downloads.first.url
+```
 
 ## Contributing
 
