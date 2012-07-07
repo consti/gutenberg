@@ -25,7 +25,7 @@ module Gutenberg
       end
     end
 
-    # protected
+    protected
 
      def parse_book(statement)
       if what = what_from_predicate(statement.predicate.to_s)
