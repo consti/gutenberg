@@ -1,7 +1,7 @@
 module Gutenberg
   class Author
     attr_accessor :author_id
-    attr_accessor :birthdate, :deathdate, :name, :webpage, :description, :alias
+    attr_accessor :birthdate, :deathdate, :name, :webpage, :alias
 
     def initialize(rdf_reader)
       rdf_reader.each_statement do |statement|
