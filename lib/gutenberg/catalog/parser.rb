@@ -26,6 +26,8 @@ module Gutenberg
 
       private
 
+      # This is pretty ugly, but for performance reasons we can go through
+      # the stream (rdf_reader) only once and in one direction.
       def read_books(rdf_reader)
         books_hash = {}
         
