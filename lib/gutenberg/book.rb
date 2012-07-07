@@ -23,6 +23,7 @@ module Gutenberg
       @downloads = download_urls.compact.uniq.map do |download_url|
         Gutenberg::Download.new(rdf_reader, download_url)
       end
+      self
     end
 
     protected
