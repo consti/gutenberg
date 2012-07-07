@@ -1,6 +1,6 @@
 module Gutenberg
   class Book
-    attr_accessor :book_id, :creator, :title, :friendlytitle, :publisher, :rights, :license, :issued
+    attr_accessor :book_id, :creator, :title, :friendlytitle, :publisher, :rights, :license, :issued, :language
     attr_reader   :rdf_reader, :downloads, :author
 
     def initialize(book_id)
@@ -25,7 +25,7 @@ module Gutenberg
       end
     end
 
-    protected
+    # protected
 
      def parse_book(statement)
       if what = what_from_predicate(statement.predicate.to_s)
@@ -40,7 +40,7 @@ module Gutenberg
 
     def what_from_predicate(predicate)
       Regexp.new(
-          %w(rights publisher license title issued).join('$|')).
+          %w(rights publisher license title issued language).join('$|')).
         match(predicate)
     end
 
